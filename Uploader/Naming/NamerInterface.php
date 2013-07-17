@@ -3,8 +3,14 @@
 namespace Oneup\UploaderBundle\Uploader\Naming;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\Request;
 
 interface NamerInterface
 {
-    public function name(UploadedFile $file);
+    /**
+     * @param UploadedFile $file
+     * @param Request      $request
+     * @return string
+     */
+    public function name(UploadedFile $file, Request $request);
 }
