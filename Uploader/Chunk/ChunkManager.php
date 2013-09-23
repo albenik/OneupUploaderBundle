@@ -59,7 +59,7 @@ class ChunkManager implements ChunkManagerInterface
 
             $file = $iterator->current();
 
-            if (false === file_put_contents($base->getPathname(), file_get_contents($file->getPathname()), \FILE_APPEND | \LOCK_EX)) {
+            if (false === file_put_contents($base->getPathname(), file_get_contents($file->getPathname()), \FILE_APPEND)) {
                 throw new \RuntimeException('Reassembling chunks failed.');
             }
 
